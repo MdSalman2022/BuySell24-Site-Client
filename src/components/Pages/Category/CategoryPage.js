@@ -6,9 +6,9 @@ import Modal from '../../Shared/Modal/Modal';
 
 const CategoryPage = () => {
 
+
     const items = useLoaderData()
 
-    // const { categoryId, name, sname, img, price, used, year, verified, location, condition, description, oriprice, phoneNo } = items;
 
 
     console.log(items);
@@ -37,7 +37,7 @@ const CategoryPage = () => {
                                     <div className="card-actions justify-end">
                                         {/* <button className="btn ">Book Now</button> */}
                                         <label htmlFor="bookModal" className="btn btn-primary">Book Now</label>
-                                        <Modal />
+                                        <Modal item={item} />
                                     </div>
                                 </div>
                             </div>

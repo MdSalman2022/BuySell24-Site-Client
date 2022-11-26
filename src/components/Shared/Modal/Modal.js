@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
-const Modal = () => {
+const Modal = ({ item }) => {
+
+
+    const { user } = useContext(AuthContext)
 
     const notify = () => toast.success('Successfully Booked!');
-
-
     return (
         <div>
 
@@ -21,15 +23,19 @@ const Modal = () => {
                             <div className="space-y-4">
                                 <div>
                                     <label for="email" className="block mb-2 text-sm">User Name</label>
-                                    <input type="text" name="name" id="name" placeholder="John Doe" className="w-full px-3 py-2 border rounded-md  " />
+                                    <input type="text" name="name" id="name" defaultValue={user?.displayName} placeholder="John Doe" className="w-full px-3 py-2 border rounded-md  " disabled />
                                 </div>
                                 <div>
                                     <label for="email" className="block mb-2 text-sm">Email address</label>
-                                    <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md  " />
+                                    <input type="email" name="email" id="email" defaultValue={user?.email} placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md  " disabled />
                                 </div>
                                 <div>
                                     <label for="email" className="block mb-2 text-sm">Item Name</label>
-                                    <input type="text" name="item" id="item" placeholder="iPhone 13 Pro Max" className="w-full px-3 py-2 border rounded-md  " />
+                                    <input type="text" name="item" id="item" defaultValue={item.name} placeholder="iPhone 13 Pro Max" className="w-full px-3 py-2 border rounded-md  " disabled />
+                                </div>
+                                <div>
+                                    <label for="email" className="block mb-2 text-sm">Price</label>
+                                    <input type="text" name="item" id="item" defaultValue={item.price} placeholder="$$$" className="w-full px-3 py-2 border rounded-md  " disabled />
                                 </div>
                                 <div>
                                     <label for="email" className="block mb-2 text-sm">Meeting Location</label>
