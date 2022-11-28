@@ -6,8 +6,6 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Modal = ({ product }) => {
 
-    // console.log(item)
-    // const { name, price } = product;
 
     console.log("product", product._id)
 
@@ -31,7 +29,6 @@ const Modal = ({ product }) => {
             phoneNo,
             id: product._id
         }
-        console.log(product._id);
 
         fetch('https://buyandsell24-server.vercel.app/bookedList', {
             method: 'POST',
