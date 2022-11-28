@@ -10,7 +10,7 @@ adminPassword: \<ADMIN@admin1\>
 
 ## `Admin Info`
 -Admin email: admin@admin.com\
--admin pass: ADMIN@admin1\
+-admin pass: ADMIN@admin1
 
 
 
