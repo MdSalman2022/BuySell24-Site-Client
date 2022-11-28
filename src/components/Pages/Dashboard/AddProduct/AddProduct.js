@@ -11,8 +11,6 @@ const AddProduct = () => {
     const { user } = useContext(AuthContext)
 
 
-    console.log(user.email)
-
 
 
 
@@ -59,13 +57,11 @@ const AddProduct = () => {
                     })
                         .then(res => res.json())
                         .then(result => {
-                            console.log(result);
                             toast.success(`${product.name} is added successfully`)
                             Navigate('/dashboard/myproducts')
                         }
                         )
                 }
-                console.log(data);
             })
 
     }

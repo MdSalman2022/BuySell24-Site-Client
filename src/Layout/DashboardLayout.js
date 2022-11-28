@@ -15,8 +15,6 @@ const DashboardLayout = () => {
             .then(data => setRole(data[0]?.role))
     }, [user?.email])
 
-    console.log(role)
-
     return (
         <div>
 
