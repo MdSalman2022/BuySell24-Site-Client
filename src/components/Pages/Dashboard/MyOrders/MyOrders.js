@@ -7,6 +7,7 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext)
     const [myOrders, setMyOrders] = useState('')
 
+    //filtering orders by email
     useEffect(() => {
         fetch(`https://buyandsell24-server.vercel.app/bookedList?email=${user?.email}`)
             .then(res => res.json())
