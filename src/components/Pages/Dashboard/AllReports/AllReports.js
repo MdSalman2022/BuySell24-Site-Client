@@ -12,8 +12,6 @@ const AllReports = () => {
             .then(data => setReport(data))
     }, [])
 
-    console.log(reports);
-
 
     const handleDelete = data => {
         fetch(`https://buyandsell24-server.vercel.app/reportedProducts/${data?._id}`, {
