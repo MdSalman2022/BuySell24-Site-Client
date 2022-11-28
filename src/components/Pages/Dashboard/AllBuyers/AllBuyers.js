@@ -6,12 +6,7 @@ const AllBuyers = () => {
 
     let { allUsers, setAllUsers } = useContext(AuthContext)
 
-
-    console.log(allUsers);
-
-
     let buyers = allUsers?.filter(allUser => allUser?.role === 'buyer')
-    console.log(allUsers);
 
 
     const handleDelete = data => {
