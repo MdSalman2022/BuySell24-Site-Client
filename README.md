@@ -4,9 +4,13 @@ Site link: Open [https://buysell-a13b9.web.app/](https://buysell-a13b9.web.app/)
 Server link: [https://buyandsell24-server.vercel.app](https://buyandsell24-server.vercel.app) to view it in your browser.
 
 
+## `Admin Info`
+
 adminEmail: \<admin@admin.com\>
 
 adminPassword: \<ADMIN@admin1\>
+
+
 
 ## `Admin Info`
 -Admin email: admin@admin.com\
