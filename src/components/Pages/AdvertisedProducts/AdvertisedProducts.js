@@ -9,16 +9,6 @@ const AdvertisedProducts = () => {
 
     const { loading, setLoading, user, allUsers } = useContext(AuthContext)
 
-    // let [advertiseItems, setAdvertiseItems] = useState([])
-
-    // const [categories, setCategories] = useState('')
-
-    // useEffect(() => {
-    //     fetch('https://buyandsell24-server.vercel.app/categorylist')
-    //         .then(res => res.json())
-    //         .then(data => setCategories(data))
-    // }, [])
-
     const { data: advertiseItems = [] } = useQuery({
         queryKey: ['products'],
         queryFn: () => fetch('https://buyandsell24-server.vercel.app/products')
@@ -26,11 +16,6 @@ const AdvertisedProducts = () => {
     })
 
 
-    // useEffect(() => {
-    //     fetch('https://buyandsell24-server.vercel.app/products')
-    //         .then(res => res.json())
-    //         .then(data => setAdvertiseItems(data))
-    // }, [])
 
     if (loading) {
         <progress className="progress w-56"></progress>
