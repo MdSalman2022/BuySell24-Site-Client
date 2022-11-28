@@ -14,7 +14,7 @@ const AllSeller = () => {
         const permission = window.confirm(`Are you sure you want to delete: ${data.name}`)
 
         if (permission) {
-            fetch(`http://localhost:5000/users/${data._id}`, {
+            fetch(`https://buyandsell24-server.vercel.app/users/${data._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -30,6 +30,23 @@ const AllSeller = () => {
     }
 
 
+    const handleVerify = id => {
+        fetch(`https://buyandsell24-server.vercel.app/seller/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    console.log(data)
+                    toast.success('User Verified')
+                }
+            })
+    }
+
+
 
     return (
         <div>
@@ -42,6 +59,7 @@ const AllSeller = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -52,7 +70,9 @@ const AllSeller = () => {
                                     <th>{index + 1}</th>
                                     <td>{seller?.name}</td>
                                     <td>{seller?.email}</td>
-                                    <td><button onClick={() => handleDelete(seller)} className="btn btn-error">Delete</button></td>
+                                    <td>{seller?.verified}</td>
+                                    <td><button onClick={() => handleVerify(seller._id)} className="btn btn-error mr-2">Verify</button>
+                                        <button onClick={() => handleDelete(seller)} className="btn btn-error">Delete</button></td>
                                 </tr>
                             )
 

@@ -10,6 +10,12 @@ const AddProduct = () => {
 
     const { user } = useContext(AuthContext)
 
+
+    console.log(user.email)
+
+
+
+
     const imageHostKey = process.env.REACT_APP_imgbb_key;
 
     const handleProductSubmit = data => {
@@ -40,8 +46,7 @@ const AddProduct = () => {
                         categoryId: data.categoryId,
                         img: imgUpload.data.url
                     }
-
-                    fetch('http://localhost:5000/categoryitems', {
+                    fetch('https://buyandsell24-server.vercel.app/categoryitems', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -110,7 +115,7 @@ const AddProduct = () => {
                         <input type="text"
                             {...register("sname",
                                 { required: "Name is required", })}
-                            className="input input-bordered w-full max-w-xs" />
+                            className="input input-bordered w-full max-w-xs" defaultValue={user?.displayName} />
                         {errors.sname && <p className='text-red-500'>{errors.sname.message}</p>}
                     </div>
                     <div className="space-y-1 text-sm">

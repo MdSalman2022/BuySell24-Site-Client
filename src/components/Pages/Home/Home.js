@@ -6,20 +6,12 @@ import Review from '../Review/Review';
 
 const Home = () => {
     return (
-        <div>
+        <div className="mx-auto">
             <Banner></Banner>
-            <div className="p-6 py-12 bg-secondary  mt-5 rounded-xl">
-                <div className="container mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center justify-center">
-                        <div className="space-x-2 text-center py-2 lg:py-0">
-                            <span className='font-bold text-5xl text-white'>Advertised Items</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <AdvertisedProducts></AdvertisedProducts>
 
-            <div className="p-6 py-12 bg-secondary mt-5 rounded-xl">
+            <div className="p-6 py-12 bg-secondary mt-5 rounded-xl mx-2 lg:mx-auto">
                 <div className="container mx-auto">
                     <div className="flex flex-col lg:flex-row items-center justify-center">
                         <div className="space-x-2 text-center py-2 lg:py-0">

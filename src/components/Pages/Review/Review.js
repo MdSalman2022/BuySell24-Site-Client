@@ -2,15 +2,15 @@ import React from 'react';
 
 const Review = () => {
     return (
-        <div className='grid grid-cols-3 justify-items-center mt-5 gap-5'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 justify-items-center mt-5 gap-5 mx-2 lg:mx-auto'>
             <div className="container flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md divide-gray-700 dark:bg-gray-900 dark:text-gray-100">
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         <div>
-                            <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                            <img src="https://i.ibb.co/QmrCQJ8/sumit.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
                         </div>
                         <div>
-                            <h4 className="font-bold">Ashraf Rahman</h4>
+                            <h4 className="font-bold">Sumit Saha</h4>
                             <span className="text-xs dark:text-gray-400">2 days ago</span>
                         </div>
                     </div>
@@ -30,10 +30,10 @@ const Review = () => {
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         <div>
-                            <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                            <img src="https://i.ibb.co/qrs3nTk/faisal.jpg" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
                         </div>
                         <div>
-                            <h4 className="font-bold">Ashraf Rahman</h4>
+                            <h4 className="font-bold">Faisal Mustafa</h4>
                             <span className="text-xs dark:text-gray-400">2 days ago</span>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ const Review = () => {
                     </div>
                 </div>
                 <div className="p-4 space-y-2 text-sm dark:text-gray-400">
-                    <p>Great service</p>
+                    <p>The user interface is really good to browse through the website.</p>
 
                 </div>
             </div>
@@ -53,10 +53,10 @@ const Review = () => {
                 <div className="flex justify-between p-4">
                     <div className="flex space-x-4">
                         <div>
-                            <img src="https://source.unsplash.com/100x100/?portrait" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
+                            <img src="https://i.ibb.co/VpyC4vJ/rifat.png" alt="" className="object-cover w-12 h-12 rounded-full dark:bg-gray-500" />
                         </div>
                         <div>
-                            <h4 className="font-bold">Ashraf Rahman</h4>
+                            <h4 className="font-bold">Rifat Ahmed</h4>
                             <span className="text-xs dark:text-gray-400">2 days ago</span>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ const Review = () => {
                     </div>
                 </div>
                 <div className="p-4 space-y-2 text-sm dark:text-gray-400">
-                    <p>Great service</p>
+                    <p>A good place for trusted Seller. Gonna recommend to anyone.</p>
 
                 </div>
             </div>

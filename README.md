@@ -1,3 +1,40 @@
+
+## `Site Name` BUYANDSELL24 - This site is about used product Buy sell.
+Site link: Open [https://buysell-a13b9.web.app/](https://buysell-a13b9.web.app/) to view it in your browser.
+Server link: [https://buyandsell24-server.vercel.app](https://buyandsell24-server.vercel.app) to view it in your browser.
+
+### `Features`
+- Login
+- Register
+- Private Route
+- Manage Review
+- Review List
+- Add product
+- Post Review
+- 404 Page
+- FAQ 
+- Blog page
+- Google login
+- Email password registration
+- Data collect from MongoDB
+- Photo view 
+- Dynamic page title
+- React Query
+- Stripe
+
+
+
+### `Functionality and Library Used`
+- MongoDB CRUD operation
+- Tailwind
+- Daisy UI
+- React Photo View
+- Express Js
+- Cors
+- Vercel
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -4,8 +4,8 @@ import Header from '../../../Shared/Header/Header';
 
 const Dashboard = () => {
     return (
-        <div>
-            Dashboard
+        <div className='flex justify-center items-center h-screen'>
+            <p className="text-5xl mt-2 font-bold">Dashboard</p>
         </div>
     );
 };

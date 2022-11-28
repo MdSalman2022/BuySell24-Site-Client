@@ -10,7 +10,7 @@ const DashboardLayout = () => {
     const [role, setRole] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`)
+        fetch(`https://buyandsell24-server.vercel.app/users?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setRole(data[0]?.role))
     }, [user?.email])
@@ -19,10 +19,13 @@ const DashboardLayout = () => {
 
     return (
         <div>
+
             <Header></Header>
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content  ">
+                <div className="drawer-content ">
+
+                    <label htmlFor="dashboard-drawer" className="btn btn-primary drawer-button lg:hidden">Dashboard sidebar</label>
                     <Outlet></Outlet>
 
                 </div>
@@ -34,7 +37,7 @@ const DashboardLayout = () => {
                             role === 'buyer' ?
                                 <>
                                     <li><Link to='/dashboard/myorders'>My Orders</Link></li>
-                                    <li><Link to='/dashboard/wishlist'>Wishlist</Link></li>
+                                    {/* <li><Link to='/dashboard/wishlist'>Wishlist</Link></li> */}
                                 </>
                                 :
                                 ''
@@ -59,15 +62,6 @@ const DashboardLayout = () => {
                                 :
                                 ''
                         }
-
-
-                        {/* {
-                            isAdmin && <>
-                                <li><Link to='/dashboard/allusers'>All users</Link></li>
-                                <li><Link to='/dashboard/adddoctor'>Add A Doctor</Link></li>
-                                <li><Link to='/dashboard/managedoctors'>Manage Doctors</Link></li>
-                            </>
-                        } */}
                     </ul>
 
                 </div>

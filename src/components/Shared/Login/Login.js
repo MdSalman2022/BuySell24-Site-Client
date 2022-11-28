@@ -27,6 +27,8 @@ const Login = () => {
         setLoginError('')
         signIn(data.email, data.password)
             .then(result => {
+
+                navigate('/')
                 const user = result.user
                 console.log(user)
                 setLoginUserEmail(data.email)

@@ -2,8 +2,8 @@ import React from 'react'
 
 function Banner() {
     return (
-        <div className="hero bg-primary rounded-xl">
-            <div className="hero-content flex-col lg:flex-row-reverse lg:gap-96 ">
+        <div className="hero bg-primary rounded-xl lg:mx-auto ">
+            <div className="hero-content flex-col lg:flex-row-reverse lg:gap-96 mx-auto">
                 <img src="https://i.ibb.co/8BbcDYV/OBDKVE0.jpg" className="flex max-w-sm rounded-lg shadow-2xl" />
                 <div>
                     <h1 className="text-5xl font-bold">Buy Sell 24/7</h1>

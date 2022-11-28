@@ -6,18 +6,26 @@ const MyProducts = () => {
 
     const { user } = useContext(AuthContext)
     const [myProducts, setMyProducts] = useState('')
+    const [allPaidProducts, setAllPaidProducts] = useState('')
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myproducts?email=${user?.email}`)
+        fetch(`https://buyandsell24-server.vercel.app/myproducts?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setMyProducts(data))
     }, [user?.email])
 
 
+    useEffect(() => {
+        fetch(`https://buyandsell24-server.vercel.app/payments`)
+            .then(res => res.json())
+            .then(data => setAllPaidProducts(data))
+    }, [])
+
+    console.log(allPaidProducts);
 
     const handleAdvertise = id => {
-        fetch(`http://localhost:5000/myproducts/${id}`, {
+        fetch(`https://buyandsell24-server.vercel.app/myproducts/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -34,7 +42,7 @@ const MyProducts = () => {
 
 
     // const handleAvailable = id => {
-    //     fetch(`http://localhost:5000/available/${id}`, {
+    //     fetch(`https://buyandsell24-server.vercel.app/available/${id}`, {
     //         method: 'PUT',
     //         headers: {
     //             'content-type': 'application/json'
@@ -53,7 +61,7 @@ const MyProducts = () => {
         const permission = window.confirm(`Are you sure you want to delete: ${data.name}`)
 
         if (permission) {
-            fetch(`http://localhost:5000/products/${data._id}`, {
+            fetch(`https://buyandsell24-server.vercel.app/products/${data._id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

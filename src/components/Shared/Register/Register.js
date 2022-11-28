@@ -33,10 +33,12 @@ const Register = () => {
                 console.log(user);
                 toast.success("Successfuuly Registered")
                 const userInfo = {
-                    displayName: data.name
+                    displayName: data.name,
+                    photoURL: data.photoURL
                 }
                 updateUser(userInfo)
                     .then(() => {
+                        navigate('/')
                         saveUser(data.name, data.email, data.role)
                     })
                     .catch(err => console.log(err))
@@ -52,7 +54,7 @@ const Register = () => {
 
     const saveUser = (name, email, role) => {
         const user = { name, email, role }
-        fetch('http://localhost:5000/users', {
+        fetch('https://buyandsell24-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -113,6 +115,14 @@ const Register = () => {
                                 })}
                             className="input input-bordered w-full max-w-xs" />
                         {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+                    </div>
+                    <div className="space-y-1 text-sm">
+                        <label for="photoURL" className="block ">Profile image</label>
+                        <input type="text"
+                            {...register("photoURL",
+                                { required: "Photo is required", })}
+                            className="input input-bordered w-full max-w-xs" />
+                        {errors.photoURL && <p className='text-red-500'>{errors.photoURL.message}</p>}
                     </div>
                     <select className="select select-primary w-22 max-w-xs" {...register("role", { required: true })}>
                         <option value="buyer">Buyer</option>

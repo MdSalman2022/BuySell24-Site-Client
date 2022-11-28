@@ -1,20 +1,26 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CategoryList = () => {
 
-    const [categories, setCategories] = useState('')
+    // const [categories, setCategories] = useState('')
 
-    useEffect(() => {
-        fetch('http://localhost:5000/categorylist')
+    // useEffect(() => {
+    //     fetch('https://buyandsell24-server.vercel.app/categorylist')
+    //         .then(res => res.json())
+    //         .then(data => setCategories(data))
+    // }, [])
+
+    const { data: categories = [] } = useQuery({
+        queryKey: ['categorylist'],
+        queryFn: () => fetch('https://buyandsell24-server.vercel.app/categorylist')
             .then(res => res.json())
-            .then(data => setCategories(data))
-    }, [])
-
+    })
 
     return (
         <div>
-            <div className="grid grid-cols-5 justify-items-center mt-5 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-5 justify-items-center mt-5 gap-5">
                 {
                     categories &&
                     categories?.map(category =>

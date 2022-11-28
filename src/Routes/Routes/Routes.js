@@ -13,9 +13,11 @@ import MyBuyers from '../../components/Pages/Dashboard/MyBuyers/MyBuyers';
 import DashboardLayout from '../../Layout/DashboardLayout';
 import AllSeller from '../../components/Pages/Dashboard/AllSellers/AllSellers';
 import AllBuyers from '../../components/Pages/Dashboard/AllBuyers/AllBuyers';
-import Reports from '../../components/Pages/Dashboard/Reports/Reports';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import ErrorPage from '../../components/Pages/ErrorPage/ErrorPage';
+import Blog from '../../components/Pages/Blog/Blog';
+import AllReports from '../../components/Pages/Dashboard/AllReports/AllReports';
+import PaymentPage from '../../components/Pages/PaymentPage/PaymentPage';
 
 
 export const router = createBrowserRouter([
@@ -33,9 +35,13 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
-                element: <CategoryPage></CategoryPage>
+                loader: ({ params }) => fetch(`https://buyandsell24-server.vercel.app/category/${params.id}`),
+                element: <PrivateRoute><CategoryPage></CategoryPage></PrivateRoute>
             },
             {
                 path: '/login',
@@ -58,39 +64,44 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/myorders/',
-                element: <MyOrders></MyOrders>
+                element: <PrivateRoute> <MyOrders></MyOrders></PrivateRoute>
             },
+            // {
+            //     path: '/dashboard/wishlist/',
+            //     element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>
+            // },
             {
-                path: '/dashboard/wishlist/',
-                element: <MyOrders></MyOrders>
+                path: '/dashboard/addproduct/',
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path: '/dashboard/addproduct/',
-                element: <AddProduct></AddProduct>
-            },
-            {
-                path: '/dashboard/addproduct/',
-                element: <AddProduct></AddProduct>
+                element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
                 path: '/dashboard/myproducts/',
-                element: <MyProducts></MyProducts>
+                element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>
             },
             {
                 path: '/dashboard/mybuyers/',
-                element: <MyBuyers></MyBuyers>
+                element: <PrivateRoute><MyBuyers></MyBuyers></PrivateRoute>
             },
             {
                 path: '/dashboard/allsellers/',
-                element: <AllSeller></AllSeller>
+                element: <PrivateRoute><AllSeller></AllSeller></PrivateRoute>
             },
             {
                 path: '/dashboard/allbuyers/',
-                element: <AllBuyers></AllBuyers>
+                element: <PrivateRoute><AllBuyers></AllBuyers></PrivateRoute>
             },
             {
                 path: '/dashboard/reports/',
-                element: <Reports></Reports>
+                element: <PrivateRoute><AllReports></AllReports></PrivateRoute>
+            },
+            {
+                path: '/dashboard/payments/:id',
+                element: <PrivateRoute><PaymentPage></PaymentPage></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://buyandsell24-server.vercel.app/bookedList/${params.id}`)
             },
         ]
     }

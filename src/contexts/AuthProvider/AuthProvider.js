@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
     const [allUsers, setAllUsers] = useState('')
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://buyandsell24-server.vercel.app/users')
             .then(res => res.json())
             .then(data => setAllUsers(data))
     }, [])

@@ -9,7 +9,7 @@ const Header = () => {
     const [role, setRole] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`)
+        fetch(`https://buyandsell24-server.vercel.app/users?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setRole(data[0]?.role))
     }, [user?.email])
@@ -32,7 +32,25 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><NavLink className="rounded-xl " to='/home'>Home</NavLink></li>
                         <li><NavLink className="rounded-xl " to='/blog'>Blog</NavLink></li>
-                        <li><NavLink className="rounded-xl " to='/dashboard'>Dashboard</NavLink></li>
+                        {user && <li><NavLink className="rounded-xl " to='/dashboard'>Dashboard</NavLink></li>}
+                        {
+                            user?.uid ?
+                                <div className="navbar-end">
+                                    <div className="avatar mr-2">
+                                        <div className="w-12 rounded-full">
+                                            <img src={user.photoURL} />
+                                        </div>
+                                    </div>
+                                    <p className='font-bold mr-2'>{user?.displayName}</p>
+                                    <Link onClick={handleLogOut} className="btn btn-primary mr-2">Logout</Link>
+                                </div>
+                                :
+                                <div className="navbar-end">
+                                    <Link to='/login' className="btn btn-primary mb-2">Login</Link>
+                                    <Link to='/register' className="btn btn-primary">Register</Link>
+                                </div>
+
+                        }
                     </ul>
                 </div>
                 <Link to='/' className=" normal-case text-3xl text-secondary font-bold underline decoration-primary">Buy&Sell24</Link>
@@ -41,24 +59,22 @@ const Header = () => {
                 <ul className="menu menu-horizontal p-0">
                     <li><NavLink className="rounded-xl mr-2" to='/home'>Home</NavLink></li>
                     <li><NavLink className="rounded-xl mr-2" to='/blog'>Blog</NavLink></li>
-                    <li><NavLink className="rounded-xl " to='/dashboard'>Dashboard</NavLink></li>
+                    {user && <li><NavLink className="rounded-xl " to='/dashboard'>Dashboard</NavLink></li>}
                 </ul>
             </div>
             {
                 user?.uid ?
-                    <div className="navbar-end">
+                    <div className="navbar-end hidden mg:flex lg:flex">
                         <div className="avatar mr-2">
                             <div className="w-12 rounded-full">
-                                <img src="https://placeimg.com/192/192/people" />
+                                <img src={user.photoURL} />
                             </div>
                         </div>
                         <p className='font-bold mr-2'>{user?.displayName}</p>
-                        <p className='font-bold mr-2'>{user?.email}</p>
-                        <p className='font-bold mr-2'>{role}</p>
                         <Link onClick={handleLogOut} className="btn btn-primary mr-2">Logout</Link>
                     </div>
                     :
-                    <div className="navbar-end">
+                    <div className="navbar-end hidden md:flex lg:flex">
                         <Link to='/login' className="btn btn-primary mr-2">Login</Link>
                         <Link to='/register' className="btn btn-primary">Register</Link>
                     </div>
