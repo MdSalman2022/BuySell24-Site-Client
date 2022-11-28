@@ -11,7 +11,6 @@ const CategoryPage = () => {
     const items = useLoaderData()
 
     const [product, SetProduct] = useState('')
-    // console.log('items', items);
 
 
     return (
