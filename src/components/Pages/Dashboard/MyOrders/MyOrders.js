@@ -13,7 +13,6 @@ const MyOrders = () => {
             .then(data => setMyOrders(data))
     }, [user?.email])
 
-    console.log(myOrders)
 
     return (
         <div>

@@ -4,10 +4,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
 const AllSeller = () => {
     let { allUsers, setAllUsers } = useContext(AuthContext)
-    // const [myUsers, setMyUsers] = useState('')
-    console.log(allUsers);
     let sellers = allUsers?.filter(allUser => allUser?.role === 'seller')
-    console.log(allUsers);
 
 
     const handleDelete = data => {
