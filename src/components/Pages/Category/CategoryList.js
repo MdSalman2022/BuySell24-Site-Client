@@ -4,13 +4,6 @@ import { Link } from 'react-router-dom';
 
 const CategoryList = () => {
 
-    // const [categories, setCategories] = useState('')
-
-    // useEffect(() => {
-    //     fetch('https://buyandsell24-server.vercel.app/categorylist')
-    //         .then(res => res.json())
-    //         .then(data => setCategories(data))
-    // }, [])
 
     const { data: categories = [] } = useQuery({
         queryKey: ['categorylist'],
