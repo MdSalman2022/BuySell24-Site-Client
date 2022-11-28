@@ -8,9 +8,7 @@ const Home = () => {
     return (
         <div className="mx-auto">
             <Banner></Banner>
-
             <AdvertisedProducts></AdvertisedProducts>
-
             <div className="p-6 py-12 bg-secondary mt-5 rounded-xl mx-2 lg:mx-auto">
                 <div className="container mx-auto">
                     <div className="flex flex-col lg:flex-row items-center justify-center">
