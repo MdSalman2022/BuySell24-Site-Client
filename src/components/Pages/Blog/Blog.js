@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
 
 
-    //Q/A
+    //Question/Answers
     return (
         <div className='container mt-10 mx-auto px-10  min-h-screen '>
             <h1 className="text-4xl text-center font-bold">Question / Answers</h1>
