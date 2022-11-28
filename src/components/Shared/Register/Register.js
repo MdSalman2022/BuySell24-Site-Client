@@ -50,8 +50,6 @@ const Register = () => {
             })
     }
 
-
-
     const saveUser = (name, email, role) => {
         const user = { name, email, role }
         fetch('https://buyandsell24-server.vercel.app/users', {
@@ -67,8 +65,6 @@ const Register = () => {
                 setCreatedUserEmail(email)
             })
     }
-
-
     const googleSignIn = event => {
         event.preventDefault();
         const Provider = new GoogleAuthProvider();

@@ -33,7 +33,6 @@ const ProductCard = ({ item, product, SetProduct }) => {
     const handleSetProduct = data => {
         SetProduct(data)
     }
-    console.log("product", product);
 
 
     const handleReportItem = data => {
@@ -53,7 +52,6 @@ const ProductCard = ({ item, product, SetProduct }) => {
                 });
         }
     }
-
 
     return (
         <div className="card w-96 bg-base-100 shadow-lg border-2 border-primary " key={_id}>
