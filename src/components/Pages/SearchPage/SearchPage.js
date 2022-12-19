@@ -20,12 +20,12 @@ const SearchPage = () => {
         <div>
             <Banner></Banner>
             {items.length > 0 ?
-                <h1 className="text-5xl font-bold">{searchText === "" ? "" : `You searched for "${searchText}"`}</h1>
+                <h1 className="lg:text-5xl px-4 font-bold">{searchText === "" ? "" : `You searched for "${searchText}"`}</h1>
                 :
-                <h1 className="text-5xl font-bold">{`No result found for "${searchText}"`}</h1>
+                <h1 className="lg:text-5xl px-4 font-bold">{`No result found for "${searchText}"`}</h1>
             }
 
-            <div className='grid grid-cols-3 mt-5 justify-items-center  gap-5'>
+            <div className='grid lg:grid-cols-3 mt-5 justify-items-center  gap-5'>
                 {items &&
                     items.map(item => <ProductCard item={item} key={item.id} product={product} SetProduct={SetProduct}></ProductCard>)
                 }

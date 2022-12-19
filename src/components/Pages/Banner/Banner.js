@@ -59,7 +59,7 @@ function Banner() {
                                 />
                             </form> */}
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <input className='peer h-full w-full outline-none text-sm text-gray-700 pr-2' defaultValue={searchText} type="text" placeholder="What are you looking for" {...register("name", { required: true, maxLength: 80 })} />
+                                <input className='peer h-full w-full outline-none text-sm text-gray-700 pr-32 lg:pr-52 py-10' defaultValue={searchText} type="text" placeholder="What are you looking for" {...register("name", { required: true, maxLength: 80 })} />
 
                             </form>
 

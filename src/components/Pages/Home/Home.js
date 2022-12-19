@@ -6,7 +6,7 @@ import Review from '../Review/Review';
 
 const Home = () => {
     return (
-        <div className="mx-auto">
+        <div className="container mx-auto">
             <Banner></Banner>
             <AdvertisedProducts></AdvertisedProducts>
             <div className=" py-8 bg-transparent rounded-xl mx-2 lg:mx-auto">

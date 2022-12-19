@@ -5,7 +5,7 @@ import { router } from './Routes/Routes/Routes';
 
 function App() {
   return (
-    <div className="lg:w-[1440px] mx-auto">
+    <div className="  mx-auto">
       <RouterProvider router={router}></RouterProvider>
       <Toaster
         position="top-center"
