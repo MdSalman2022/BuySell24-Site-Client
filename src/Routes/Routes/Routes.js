@@ -18,6 +18,7 @@ import ErrorPage from '../../components/Pages/ErrorPage/ErrorPage';
 import Blog from '../../components/Pages/Blog/Blog';
 import AllReports from '../../components/Pages/Dashboard/AllReports/AllReports';
 import PaymentPage from '../../components/Pages/PaymentPage/PaymentPage';
+import SearchPage from '../../components/Pages/SearchPage/SearchPage';
 
 
 export const router = createBrowserRouter([
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/search/:name',
+                element: <PrivateRoute><SearchPage></SearchPage></PrivateRoute>
             },
             {
                 path: '/category/:id',

@@ -7,7 +7,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const Modal = ({ product }) => {
 
 
-    console.log("product", product._id)
+    // console.log("product", product._id)
 
     const handleBooking = event => {
         event.preventDefault()

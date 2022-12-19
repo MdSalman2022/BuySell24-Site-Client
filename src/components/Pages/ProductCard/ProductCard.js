@@ -21,7 +21,7 @@ const ProductCard = ({ item, product, SetProduct }) => {
             .then(data => setSeller(data))
     }, [email])
 
-    console.log(seller[0]?.verified)
+    // console.log(seller[0]?.verified)
 
     //for filtering buyer from user list
     allUsers = allUsers?.filter(allUser => allUser?.role === 'buyer')

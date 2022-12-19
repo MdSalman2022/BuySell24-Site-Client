@@ -10,6 +10,9 @@ const AuthProvider = ({ children }) => {
 
     const [allUsers, setAllUsers] = useState('')
 
+    const [loading, setLoading] = useState(true)
+
+
     useEffect(() => {
         fetch('https://buyandsell24-server.vercel.app/users')
             .then(res => res.json())
@@ -17,9 +20,19 @@ const AuthProvider = ({ children }) => {
     }, [])
 
 
+    let [searchText, setSearchText] = useState("")
+
+    let [items, setItems] = useState("")
+
+    useEffect(() => {
+        fetch(`https://buyandsell24-server.vercel.app/search?name=${searchText}`)
+            .then(res => res.json())
+            .then(data => setItems(data))
+    }, [searchText])
+
+    console.log(items)
     const [user, setUser] = useState(null)
 
-    const [loading, setLoading] = useState(true)
 
     const createUser = (name, email, password) => {
         setLoading(true)
@@ -75,6 +88,10 @@ const AuthProvider = ({ children }) => {
         signIn,
         providerLogin,
         logOut,
+        setSearchText,
+        searchText,
+        items,
+        setItems
 
     }
 
