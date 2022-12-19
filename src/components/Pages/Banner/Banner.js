@@ -28,7 +28,11 @@ function Banner() {
         setSearchText(data.name);
         console.log(data.name);
         console.log(searchText);
-        { data.name ? navigate(`/search/${data.name}`) : navigate(`/`) }
+        if (data.name === " ") {
+            navigate(`/`)
+        }
+        else { data.name ? navigate(`/search/${data.name}`) : navigate(`/`) }
+
         console.log(errors);
     }
 
@@ -60,7 +64,6 @@ function Banner() {
                             </form> */}
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <input className='peer h-full w-full outline-none text-sm text-gray-700 pr-32 lg:pr-52 py-10' defaultValue={searchText} type="text" placeholder="What are you looking for" {...register("name", { required: true, maxLength: 80 })} />
-
                             </form>
 
                         </div>

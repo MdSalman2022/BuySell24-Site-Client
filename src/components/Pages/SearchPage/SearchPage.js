@@ -2,8 +2,6 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Banner from '../Banner/Banner';
 import ProductCard from '../ProductCard/ProductCard';
-import SearchCard from '../SearchCard/SearchCard';
-import { useLoaderData } from 'react-router-dom';
 
 const SearchPage = () => {
 
@@ -17,7 +15,7 @@ const SearchPage = () => {
 
 
     return (
-        <div>
+        <div className='container mx-auto'>
             <Banner></Banner>
             {items.length > 0 ?
                 <h1 className="lg:text-5xl px-4 font-bold">{searchText === "" ? "" : `You searched for "${searchText}"`}</h1>
