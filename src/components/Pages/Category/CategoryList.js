@@ -19,7 +19,7 @@ const CategoryList = () => {
                     categories?.map(category =>
                         <div key={category.categoryId} className=''>
                             <div className="max-w-xs rounded-3xl bg-transparent ">
-                                <img src={category.img} alt="" className="rounded-2xl p-2 object-contain object-center w-64 rounded-t-md h-32  bg-transparent" />
+                                <img src={category.img} alt="" className="rounded-2xl p-2 object-contain object-fit w-64 rounded-t-md h-32  bg-transparent" />
                             </div>
                             <Link to={`/category/${category.categoryId}`}><button type="button" className="hover:bg-secondary transition-colors hover:text-white mt-5 flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md btn-primary">{category.name}</button></Link>
                         </div>)
